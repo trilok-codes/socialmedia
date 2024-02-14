@@ -1,0 +1,12 @@
+.calculator{
+    background-color: aqua;
+    border: 1px solid black;
+    width: 400px;
+    border-radius: 5px;
+    height: 700px;
+    margin-left: 410px;
+    padding: 20px;
+    overflow: hidden;
+    
+    
+}

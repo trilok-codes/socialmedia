@@ -1,0 +1,13 @@
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    
+}
+.butt{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
