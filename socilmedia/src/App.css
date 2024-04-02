@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+  margin: 0%;
+  margin-right: 0%;
+}
+.content{
+
+ min-width: 100%;
+}
+.sidebar{
+
+  min-height: 800px;
+}
+.card{
+  margin : 20px 20px
+}
+.tags{
+
+  margin:2px
+}
