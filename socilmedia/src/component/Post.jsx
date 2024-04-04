@@ -19,6 +19,7 @@ const Post =({post})=>{
           <a href="#" className="btn btn-primary">{post.body}</a>
           {post.tags.map((tag)=>
           <span key={tag} className="badge tags text-bg-primary">{tag}</span>)}
+          <div>{`total reactions ${post.reactions}`}</div>
         </div>
       </div>
 

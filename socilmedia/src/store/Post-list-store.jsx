@@ -10,17 +10,30 @@ const postListReducer=(currPostList,action)=>{
     let newPostList= currPostList
     if(action.type==="Delete"){
         newPostList=currPostList.filter(data=>data.id!==action.payload.id)
+    }else if(action.type==="AddPost"){
+        newPostList = [action.payload, ...currPostList]
     }
-    return newPostList
+    return newPostList;
 }
 const PostListProvider=({children})=>{
 const [postList,dispatchPostlist]=useReducer(postListReducer ,defaultvalue)
 
 
 const addPost=(posttitle, postbody, postid, postreactions, posttags)=>{
-    console.log(`${posttitle} ${postbody} ${postid} ${postreactions} ${posttags}`)
+   dispatchPostlist({
+    type:"AddPost",
+    payload:{
+        id:postid,
+        title:posttitle,
+        body:postbody,
+        reactions:postreactions,
+        tags:posttags
+        }
 
-}
+
+   });
+
+};
 
 
 const deletePost=(id)=>{ 

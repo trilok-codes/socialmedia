@@ -15,8 +15,17 @@ const {addPost}= useContext(PostList)
     const posttitle = titleelement.current.value;
     const postid= idelement.current.value;
     const postbody=bodyelement.current.value;
-    const posttags=tagselement.current.value.split(/(\s+)/);
+    const posttags=tagselement.current.value.split(" ");
     const postreactions= reactionselement.current.value;
+
+
+    titleelement.current.value="";
+    idelement.current.value="";
+    bodyelement.current.value="";
+    tagselement.current.value="";
+    reactionselement.current.value=""
+
+
 
 addPost(posttitle,postbody,postid,postreactions,posttags);
   }
