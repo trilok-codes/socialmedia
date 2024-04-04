@@ -17,7 +17,10 @@ const PostListProvider=({children})=>{
 const [postList,dispatchPostlist]=useReducer(postListReducer ,defaultvalue)
 
 
-const addPost=()=>{}
+const addPost=(posttitle, postbody, postid, postreactions, posttags)=>{
+    console.log(`${posttitle} ${postbody} ${postid} ${postreactions} ${posttags}`)
+
+}
 
 
 const deletePost=(id)=>{ 
@@ -28,7 +31,7 @@ const deletePost=(id)=>{
 };
 
     return (
-        <PostList.Provider value={{postList , deletePost}}>{children}</PostList.Provider>
+        <PostList.Provider value={{postList , deletePost, addPost}}>{children}</PostList.Provider>
     )
 }
 const defaultvalue=[{
