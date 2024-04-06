@@ -13,6 +13,9 @@ const postListReducer=(currPostList,action)=>{
     }else if(action.type==="AddPost"){
         newPostList = [action.payload, ...currPostList]
     }
+    else if(action.type==="AddinitialPost"){
+        newPostList = action.payload.posts;
+    }
     return newPostList;
 }
 const PostListProvider=({children})=>{
@@ -34,6 +37,17 @@ const addPost=(posttitle, postbody, postid, postreactions, posttags)=>{
    });
 
 };
+const addinitialPosts=(posts)=>{
+   dispatchPostlist({
+    type:"AddinitialPost",
+    payload:{
+        posts,
+        }
+
+
+   });
+
+};
 
 
 const deletePost=(id)=>{ 
@@ -44,7 +58,7 @@ const deletePost=(id)=>{
 };
 
     return (
-        <PostList.Provider value={{postList , deletePost, addPost}}>{children}</PostList.Provider>
+        <PostList.Provider value={{postList , deletePost, addPost,addinitialPosts}}>{children}</PostList.Provider>
     )
 }
 const defaultvalue=[{
